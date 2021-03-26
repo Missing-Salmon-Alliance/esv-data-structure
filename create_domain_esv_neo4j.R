@@ -90,6 +90,6 @@ for(x in 1:nrow(esvEdgelist)){
 call_neo4j("MATCH (n:EssentialSalmonVariable) RETURN n;", neo_con, type = "row")
 call_neo4j("MATCH (n:Domain) RETURN n;", neo_con, type = "row")
 
-
+# If you don't have a neo4j to connect to, you can still check out the graph using the edglist
 G <- igraph::graph_from_edgelist(as.matrix(esvEdgelist[,c(1,2)]))
 visIgraph(G)
